@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+html {
+  font-size: 15px;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0 auto;
+}
+.user {
+  display: flex;
+}
+.user__avatar {
+  width: 57px;
+  height: 57px;
+  padding-right: 9px;
+  box-sizing: content-box;
+}
+.user__avatar img {
+  border-radius: 50%;
+}
+.user__name {
+  font-size: 1.06rem;
+  color: #2B2A2C;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+.user__prof {
+  font-size: 0.8rem;
+  color: rgba(43, 42, 44, 0.7);
+  line-height: 1.46rem;
+  padding-top: 1px;
+}
+.header {
+  padding: 1.2rem 0;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* подчёркивание в nav делается не через border-bottom
+для возможности анимирования*/
+.nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.nav__link {
+  margin-right: 2rem;
+  font-size: 0.93rem;
+  position: relative;
+  color: #2B2A2C;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 20px;
+}
+.nav__link:after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #2B2A2C;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  z-index: 1;
+  transition: width 0.2s linear;
+}
+.nav__link:hover:not(.nav__link--btn):after {
+  width: 100%;
+}
+.nav__link--btn {
+  padding: 0.66rem 2rem;
+  border: 2px solid #2B2A2C;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.nav__link--btn:hover {
+  background-color: #2B2A2C;
+  color: white;
+}
+.intro__inner {
+  display: flex;
+  padding-top: 100px;
+  border-bottom: 1px solid rgba(106, 105, 107, 0.3);
+  padding-bottom: 120px;
+}
+.intro__content {
+  width: 50%;
+}
+.intro__subtitle {
+  font-size: 2.13rem;
+  color: #2B2A2C;
+  font-weight: 200;
+}
+.intro__title {
+  margin-bottom: 5px;
+  font-size: 3rem ;
+  color: #2B2A2C;
+  font-weight: 700;
+}
+.intro__text {
+  font-size: 1.2rem;
+  color: rgba(43, 42, 44, 0.7);
+}
+.intro__photo {
+  width: 50%;
+}
+.social {
+  margin: 1.8rem 0;
+}
+.social__link img {
+  width: 41px;
+  height: 41px;
+  padding: 0.4rem;
+  transition: transform 0.2s linear;
+}
+.social__link img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+a:link {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

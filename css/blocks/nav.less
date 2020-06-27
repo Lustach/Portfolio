@@ -1,0 +1,45 @@
+/* подчёркивание в nav делается не через border-bottom
+для возможности анимирования*/
+.nav{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  &__link {
+    margin-right: 2rem;
+    font-size: 0.93rem;
+    position:relative;
+    color: @black;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius:20px;
+    &:after{
+      content:'';// чтобы появился элемент нужно задать контент, в данном случае это не символы, а ''
+      width: 0;
+      height: 2px;
+      background-color: @black;
+      position: absolute;
+      bottom: -5px;
+      left:0;
+      z-index:1;
+      transition: width .2s linear;
+    }
+    //not - при наведении нет класса
+    &:hover:not(.nav__link--btn){
+      // при наведении показываем псевдо-эл. after
+      &:after{
+        width:100%;
+      }
+    }
+    &--btn{
+      padding:0.66rem 2rem;
+      border: 2px solid @black;
+      transition: background-color .2s linear, color .2s linear;
+      &:hover{
+        background-color: @black;
+        color:white;
+      }
+    }
+  }
+
+}
