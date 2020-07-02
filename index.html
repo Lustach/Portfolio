@@ -10,6 +10,13 @@
   <title>Portfolio</title>
 </head>
 <body>
+<svg display="none">
+  <symbol id="android" viewBox="0 0 576 512">
+    <path
+      d="M420.55,301.93a24,24,0,1,1,24-24,24,24,0,0,1-24,24m-265.1,0a24,24,0,1,1,24-24,24,24,0,0,1-24,24m273.7-144.48,47.94-83a10,10,0,1,0-17.27-10h0l-48.54,84.07a301.25,301.25,0,0,0-246.56,0L116.18,64.45a10,10,0,1,0-17.27,10h0l47.94,83C64.53,202.22,8.24,285.55,0,384H576c-8.24-98.45-64.54-181.78-146.85-226.55"/>
+  </symbol>
+</svg>
+
 <header class="header">
   <div class="container">
     <div class="header__inner">
@@ -41,12 +48,16 @@
         <h1 class="intro__title">Я Влад Луста</h1>
         <div class="intro__text">Frontend-разработчик</div>
         <div class="social">
-          <!-- todo переделать на спрайты -->
+          <!-- Svg sprites -->
           <a href="https://vk.com/tartarin3" class="social__link social__link_vk">
-            <img src="images/vk-brands.svg" alt="">
+            <svg>
+              <use xlink:href="./images/svgSprites.svg#vk" xmlns="http://www.w3.org/2000/svg"></use>
+            </svg>
           </a>
           <a href="https://github.com/Lustach" class="social__link social__link_github">
-            <img src="images/github.svg" alt="">
+            <svg>
+              <use xlink:href="./images/svgSprites.svg#github" xmlns="http://www.w3.org/2000/svg"></use>
+            </svg>
           </a>
         </div>
         <div>

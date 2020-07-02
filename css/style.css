@@ -128,17 +128,23 @@ html {
 .social {
   margin: 1.8rem 0;
 }
-.social__link img {
+.social__link svg {
   width: 41px;
   height: 41px;
   padding: 0.4rem;
   transition: transform 0.2s linear;
 }
-.social__link img:hover {
+.social__link svg:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  fill: #1869FF;
 }
 a:link {
   text-decoration: none;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  fill: red;
 }
 /*# sourceMappingURL=style.css.map */
