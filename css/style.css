@@ -19,6 +19,7 @@ html {
 *:before {
   box-sizing: border-box;
 }
+/*Blocks*/
 .container {
   width: 100%;
   max-width: 1200px;
@@ -104,7 +105,8 @@ html {
   border-bottom: 1px solid rgba(106, 105, 107, 0.3);
   padding-bottom: 120px;
   background: url("../images/symbols.png") right bottom no-repeat;
-  background-size: 40%;
+  background-size: 35em;
+  position: relative;
 }
 .intro__content {
   width: 60%;
@@ -127,8 +129,8 @@ html {
 }
 .intro__photo {
   position: absolute;
-  top: 91px;
-  right: 18%;
+  bottom: -1px;
+  right: 0;
 }
 .social {
   margin: 1.8rem 0;
@@ -160,7 +162,7 @@ a:link {
   border-radius: 30px;
   font-size: 1.06rem;
   line-height: 1.1;
-  padding: 1.1rem 1.9rem;
+  padding: 1.05em 1.7em;
   font-family: inherit;
   text-decoration: none;
   outline: none;
@@ -170,6 +172,7 @@ a:link {
   min-width: 170px;
   color: inherit;
   transition: background-color 0.2s linear, color 0.2s linear, box-shadow 0.2s linear;
+  /* Mods */
 }
 .btn:hover {
   background-color: #2B2A2C;
@@ -178,5 +181,71 @@ a:link {
 }
 .btn + .btn {
   margin-left: 1rem;
+}
+.btn--sm {
+  padding: 0.5em 1em;
+  font-size: 0.94rem;
+  font-weight: 700;
+  border-width: 2px;
+}
+.works {
+  padding: 2.8rem 0;
+}
+.works__nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+.works__nav-link {
+  margin: 0 1.2rem;
+  font-size: 0.8rem;
+  color: rgba(43, 42, 44, 0.7);
+  text-decoration: none;
+}
+.works__nav-link:hover {
+  text-decoration: underline;
+}
+.work {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s linear;
+}
+.work:hover {
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+.work__image {
+  max-width: 100%;
+}
+.work__content {
+  padding: 1rem 0.8rem;
+}
+.work__cat {
+  font-size: 0.8rem;
+  color: #2B2A2C;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.work__title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.06rem;
+  color: #2B2A2C;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem 2.8rem;
+}
+.portfolio__col {
+  flex-basis: 33.33333%;
+  padding: 1rem;
+}
+/*Helpers*/
+.text-center {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
