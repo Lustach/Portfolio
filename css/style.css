@@ -244,8 +244,64 @@ a:link {
   flex-basis: 33.33333%;
   padding: 1rem;
 }
+.about {
+  margin: 8.4rem 0;
+}
+.about__inner {
+  display: flex;
+  max-width: 1090px;
+}
+.about__content {
+  padding-left: 3.2rem;
+  margin-top: 2rem;
+  width: 50%;
+}
+.about__photo {
+  position: relative;
+  width: 50%;
+}
+.about__photo img {
+  position: relative;
+  z-index: 2;
+}
+.about__photo:before {
+  content: '';
+  width: 413px;
+  height: 413px;
+  background-color: #EFEFEF;
+  position: absolute;
+  left: 1rem;
+  bottom: 0;
+  z-index: 1;
+}
+.about__title {
+  font-size: 3rem;
+  color: #2B2A2C;
+  font-weight: 700;
+}
+.about__bigtitle {
+  font-size: 6.1rem;
+  line-height: 1.1;
+  margin-bottom: 1.4rem;
+  color: rgba(43, 42, 44, 0.15);
+  font-weight: 700;
+  /*ml равносилен position:relative, left:-10px; ????*/
+  margin-left: -10px;
+}
+.about__text {
+  font-size: 0.8rem;
+  line-height: 2;
+  color: #6A696B;
+  font-weight: 300;
+  margin-bottom: 2.8rem;
+}
 /*Helpers*/
 .text-center {
   text-align: center;
+}
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */
