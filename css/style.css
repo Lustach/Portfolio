@@ -211,6 +211,10 @@ a:link {
   font-weight: 700;
   border-width: 2px;
 }
+.btn--thin {
+  min-width: 145px;
+  font-size: 0.8rem;
+}
 .works {
   padding: 2.8rem 0;
 }
@@ -573,6 +577,17 @@ a:link {
 .modal__close:hover {
   transform: translateY(-3px);
 }
+.modal__title {
+  margin-bottom: 3.6rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #2B2A2C;
+  font-weight: 700;
+  text-align: center;
+}
+.modal__content {
+  padding: 5rem 1rem;
+}
 .modal-work {
   display: flex;
 }
@@ -590,7 +605,7 @@ a:link {
 }
 .modal-work__content {
   width: 35%;
-  padding: 3.4rem 6.6rem 1rem 1.73rem;
+  padding: 3.4rem 3.6rem 1rem 1.73rem;
   position: relative;
 }
 .modal-work__header {
@@ -652,6 +667,111 @@ a:link {
   font-size: 0.94rem;
   color: #2B2A2C;
   text-transform: uppercase;
+}
+.modal-resume__container {
+  padding: 5rem 1rem;
+}
+.modal-resume__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.modal-resume__title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #2B2A2C;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+}
+.timeline {
+  display: flex;
+  margin: 4.2rem auto;
+  width: 100%;
+  max-width: 768px;
+  position: relative;
+}
+.timeline:before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: #2B2A2C;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+}
+.timeline__col {
+  width: 50%;
+}
+.timeline__col--left {
+  text-align: right;
+  padding-right: 3.2rem;
+}
+.timeline__col--right {
+  padding-left: 3.2rem;
+}
+.timeline__title {
+  margin-bottom: 2.6rem;
+  font-size: 1.2rem;
+  color: #2B2A2C;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.timeline__item {
+  margin-bottom: 2.6rem;
+}
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+.timeline__date {
+  display: block;
+  margin-bottom: 0.8rem;
+  text-decoration: underline;
+  font-size: 0.94rem;
+  color: #2B2A2C;
+}
+.timeline__subtitle {
+  margin-bottom: 0.2rem;
+  font-size: 1.06rem;
+  color: #2B2A2C;
+  font-weight: 700;
+}
+.timeline__position {
+  font-size: 0.94rem;
+  color: #2B2A2C;
+  font-style: italic;
+}
+.timeline__text {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #6A696B;
+  font-weight: 300;
+}
+.progress-bar {
+  margin-bottom: 2.6rem;
+}
+.progress-bar__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+.progress-bar__title {
+  font-size: 0.94rem;
+  font-weight: 300;
+}
+.progress-bar__right {
+  padding-left: 1.2rem;
+}
+.progress-bar__bar {
+  width: 139px;
+  height: 6px;
+  background-color: #EFEFEF;
+}
+.progress-bar__progress {
+  height: 100%;
+  background-color: #6A696B;
+  transition: width 0.2s linear;
 }
 /*Helpers*/
 .text-center {
