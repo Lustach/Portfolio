@@ -6,6 +6,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: @black;
+  &.no-scroll{
+    overflow:hidden;
+  }
 }
 h1,h2,h3,h4,h5,h6{
   margin:0;
@@ -17,7 +20,9 @@ html {
 *,*:after,*:before{
   box-sizing: border-box;
 }
+
 /*Blocks*/
+@import "scrollbar.less";
 @import "blocks/container";
 @import "blocks/header";
 @import "blocks/user";
@@ -33,5 +38,7 @@ html {
 @import "blocks/news";
 @import "blocks/articles";
 @import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/modal-work";
 /*Helpers*/
 @import "helpers.less";
