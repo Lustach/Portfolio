@@ -2,19 +2,20 @@
   box-shadow: 0 0 4px rgba(#000, .25);
   border-radius: 10px;
   overflow: hidden;
+  max-width:370px;
   transition: box-shadow .2s linear;
   &:hover{
     cursor: pointer;
     box-shadow: 0 0 25px rgba(#000,.25);
   }
   &__image {
+    display: block;
     max-width: 100%;
+    height: auto;
     transition: all 0.2s ease-out;
     &:hover{
       transform: scale(1.1);
     }
-    height: auto;
-    display:block;
   }
 
   &__content {
