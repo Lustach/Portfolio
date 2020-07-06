@@ -542,7 +542,7 @@ a:link {
   color: #2B2A2C;
 }
 .modal {
-  display: flex;
+  display: none;
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -559,6 +559,9 @@ a:link {
   margin: auto;
   position: relative;
   background-color: #fff;
+}
+.modal__dialog--sm {
+  max-width: 900px;
 }
 .modal__close {
   width: 34px;
@@ -583,7 +586,6 @@ a:link {
   text-transform: uppercase;
   color: #2B2A2C;
   font-weight: 700;
-  text-align: center;
 }
 .modal__content {
   padding: 5rem 1rem;
@@ -773,13 +775,83 @@ a:link {
   background-color: #6A696B;
   transition: width 0.2s linear;
 }
+.contact {
+  display: flex;
+  background: url(https://placehold.it/477x700) right center no-repeat;
+}
+.contact__left {
+  width: 47%;
+  padding: 2rem;
+}
+.contact__info {
+  margin: 2rem 0 3rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.94rem;
+  color: #2B2A2C;
+  font-weight: 300;
+}
+.contact__info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.contact__info-item:last-child {
+  margin-bottom: 0;
+}
+.contact__info-icon {
+  margin-right: 0.75rem;
+  max-height: 0.95rem;
+}
+.form__group {
+  margin-bottom: 1.8rem;
+}
+.form__label {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+  color: #2B2A2C;
+  font-weight: 700;
+}
+.form__input,
+.form__textarea {
+  display: block;
+  width: 100%;
+  padding: 1.3rem 1.8rem;
+  border: 1px solid rgba(112, 112, 112, 0.3);
+  border-radius: 1.8rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  font-weight: 300;
+  color: #2B2A2C;
+}
+.form__input:focus,
+.form__textarea:focus {
+  outline: none;
+  border-color: #36abc7;
+}
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: #2B2A2C;
+}
+.form__textarea {
+  height: 200px;
+  resize: none;
+}
 /*Helpers*/
 .text-center {
   text-align: center;
+}
+.text-left {
+  text-align: left;
 }
 .img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.mb-0 {
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */

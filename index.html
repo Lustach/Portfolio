@@ -10,7 +10,8 @@
   <link rel="shortcut icon" href="https://toppng.com/uploads/preview/krasivye-logotipy-115507292386wws3ynfmr.png" type="image/x-icon">
   <title>Portfolio</title>
 </head>
-<body class="no-scroll">
+<!--class="no-scroll"-->
+<body>
 <header class="header">
   <div class="container">
     <div class="header__inner">
@@ -28,7 +29,7 @@
         <a href="#" class="nav__link">about me</a>
         <a href="#" class="nav__link">blog</a>
         <a href="#" class="nav__link">contacts</a>
-        <a href="#" class="nav__link nav__link--btn">hire me</a>
+        <a href="#" class="nav__link nav__link--btn" data-modal="#modal_hire_me">hire me</a>
       </nav>
     </div>
   </div>
@@ -54,8 +55,8 @@
             </svg>
           </a>
         </div>
-        <a href="#" class="btn">hire me</a>
-        <button type="button" class="btn">see my resume</button>
+        <a href="#" class="btn" data-modal="#modal_hire_me">hire me</a>
+        <button type="button" class="btn" data-modal="#modal_resume">see my resume</button>
       </div>
       <img src="./images/photo.png" class="intro__photo" alt="">
     </div>
@@ -65,72 +66,72 @@
 <div class="works">
   <div class="container"><!--container-->
     <div class="works__nav">
-      <a href="" class="works__nav-link">All</a>
-      <a href="" class="works__nav-link">App</a>
-      <a href="" class="works__nav-link">Websites</a>
-      <a href="" class="works__nav-link">Interaction</a>
+      <a href="" class="works__nav-link" data-filter="all">All</a>
+      <a href="" class="works__nav-link" data-filter="app">App</a>
+      <a href="" class="works__nav-link" data-filter="website">Websites</a>
+      <a href="" class="works__nav-link" data-filter="interaction">Interaction</a>
     </div>
     <div class="portfolio">
-      <div class="portfolio__col">
+      <div class="portfolio__col" data-cat="website">
         <div class="work">
           <img src="https://placehold.it/370x250" alt="" class="work__image">
           <div class="work__content">
-            <div class="work__cat">category</div>
+            <div class="work__cat">category: website</div>
             <div class="work__title">Project title
               <time class="work__date" datetime="2020-03-07 19:00">2020</time>
             </div>
           </div>
         </div>
       </div>
-      <div class="portfolio__col">
+      <div class="portfolio__col" data-cat="interaction">
         <div class="work">
           <img src="https://placehold.it/370x250" alt="" class="work__image">
           <div class="work__content">
-            <div class="work__cat">category</div>
+            <div class="work__cat">category: interaction</div>
             <div class="work__title">Project title
               <time class="work__date" datetime="2020-03-07 19:00">2020</time>
             </div>
           </div>
         </div>
       </div>
-      <div class="portfolio__col">
+      <div class="portfolio__col" data-cat="app">
         <div class="work">
           <img src="https://placehold.it/370x250" alt="" class="work__image">
           <div class="work__content">
-            <div class="work__cat">category</div>
+            <div class="work__cat">category: app</div>
             <div class="work__title">Project title
               <time class="work__date" datetime="2020-03-07 19:00">2020</time>
             </div>
           </div>
         </div>
       </div>
-      <div class="portfolio__col">
+      <div class="portfolio__col" data-cat="interaction">
         <div class="work">
           <img src="https://placehold.it/370x250" alt="" class="work__image">
           <div class="work__content">
-            <div class="work__cat">category</div>
+            <div class="work__cat">category: interaction</div>
             <div class="work__title">Project title
               <time class="work__date" datetime="2020-03-07 19:00">2020</time>
             </div>
           </div>
         </div>
       </div>
-      <div class="portfolio__col">
+      <div class="portfolio__col" data-cat="app">
         <div class="work">
           <img src="https://placehold.it/370x250" alt="" class="work__image">
           <div class="work__content">
-            <div class="work__cat">category</div>
+            <div class="work__cat">category: app</div>
             <div class="work__title">Project title
               <time class="work__date" datetime="2020-03-07 19:00">2020</time>
             </div>
           </div>
         </div>
       </div>
-      <div class="portfolio__col">
+      <div class="portfolio__col" data-cat="website">
         <div class="work">
           <img src="https://placehold.it/370x250" alt="" class="work__image">
           <div class="work__content">
-            <div class="work__cat">category</div>
+            <div class="work__cat">category:website</div>
             <div class="work__title">Project title
               <time class="work__date" datetime="2020-03-07 19:00">2020</time>
             </div>
@@ -162,8 +163,8 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam commodi consequuntur corporis cupiditate dolor doloribus enim eveniet ex illum impedit magni
             nesciunt, pariatur quae ratione sint sit totam voluptatem.</p>
         </div>
-        <a href="" class="btn">HIRE ME</a>
-        <button class="btn" type="button">SEE MY RESUME</button>
+        <a href="" class="btn" data-modal="#modal_hire_me">HIRE ME</a>
+        <button class="btn" type="button" data-modal="#modal_resume">SEE MY RESUME</button>
       </div>
     </div>
   </div>
@@ -326,16 +327,15 @@
         <a class="footer__nav-link" href="#">About me</a>
         <a class="footer__nav-link" href="#">Blog</a>
         <a class="footer__nav-link" href="#">Contact</a>
-        <a class="footer__nav-link  footer__nav-link--btn" href="#">Hire me</a>
+        <a class="footer__nav-link  footer__nav-link--btn" href="#" data-modal="#modal_hire_me">Hire me</a>
       </nav>
     </div><!-- /.footer__inner -->
 
   </div><!-- /.container -->
 </footer>
 <!-- Modals -->
-<div class="modal" style="display:none">
+<div class="modal" id="modal_project_1" >
   <div class="modal__dialog">
-
     <button class="modal__close" type="button">
       <img src="images/times-circle.svg" alt="Close">
     </button>
@@ -386,7 +386,7 @@
   </div><!-- /.modal__dialog -->
 </div><!-- /.modal -->
 
-<div class="modal">
+<div class="modal" id="modal_resume">
   <div class="modal__dialog">
 
     <button class="modal__close" type="button">
@@ -394,7 +394,7 @@
     </button>
 
     <div class="modal__content">
-      <h3 class="modal__title">RESUME</h3>
+      <h3 class="modal__title text-center" data-modal="#modal_resume">RESUME</h3>
 
       <div class="text-center">
         <a class="btn btn--thin" href="#">DOWNLOAD PDF</a>
@@ -513,7 +513,7 @@
       </div><!-- /.timeline -->
 
       <div class="text-center">
-        <a class="btn" href="#">Hire me</a>
+        <a class="btn" href="#" data-modal="#modal_hire_me">Hire me</a>
       </div>
 
     </div><!-- /.modal__content -->
@@ -521,5 +521,53 @@
   </div><!-- /.modal__dialog -->
 </div><!-- /.modal -->
 
+<div class="modal" id="modal_hire_me">
+  <div class="modal__dialog  modal__dialog--sm">
+
+    <button class="modal__close" type="button">
+      <img src="images/times-circle.svg" alt="Close">
+    </button>
+
+    <div class="contact">
+      <div class="contact__left">
+        <h3 class="modal__title mb-0">LET'S TALK!</h3>
+        <h4 class="modal__subtitle">CALL ME OR SEND ME A REQUEST</h4>
+
+        <ul class="contact__info">
+          <li class="contact__info-item">
+            <img class="contact__info-icon" src="images/phone.svg" alt="">
+            0714494247
+          </li>
+          <li class="contact__info-item">
+            <img class="contact__info-icon" src="images/mail.svg" alt="">
+            lusta.vlad2001@gmail.com
+          </li>
+          <li class="contact__info-item">
+            <img class="contact__info-icon" src="images/telegram.svg" alt="">
+            @Lustach
+          </li>
+        </ul>
+
+        <form class="form" action="/" method="post">
+          <div class="form__group">
+            <label class="form__label" for="input-email">Address e-mail</label>
+            <input class="form__input" name="input-email" type="text" id="input-email" placeholder="Adress e-mail">
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="input-text">Request</label>
+            <textarea class="form__textarea" name="input-text" id="input-text" placeholder="Type your request..."></textarea>
+          </div>
+
+          <div class="text-right">
+            <button class="btn" type="submit">SEND</button>
+          </div>
+        </form>
+      </div><!-- /.contact__left -->
+    </div><!-- /.contact -->
+
+  </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+<script src="js/index.js"></script>
 </body>
 </html>

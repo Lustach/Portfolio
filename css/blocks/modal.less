@@ -1,5 +1,5 @@
 .modal {
-    display: flex;
+    display: none;
     width: 100%;
     height: 100%;
     padding: 1rem;
@@ -18,6 +18,9 @@
         position: relative;
 
         background-color: #fff;
+        &--sm{
+            max-width:900px;
+        }
     }
     &__close {
         width: 34px;
@@ -46,7 +49,7 @@
         text-transform: uppercase;
         color: @black;
         font-weight: 700;
-        text-align: center;
+
     }
     &__content {
         padding: 5rem 1rem;

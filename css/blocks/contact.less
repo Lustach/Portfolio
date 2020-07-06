@@ -1,0 +1,30 @@
+.contact {
+  display: flex;
+  background:  url(https://placehold.it/477x700) right center no-repeat;
+  &__left {
+    width: 47%;
+    padding: 2rem;
+  }
+  &__info {
+    margin: 2rem 0 3rem;
+    padding: 0;
+    list-style: none;
+
+    font-size: .94rem;
+    color: @black;
+    font-weight: 300;
+  }
+  &__info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: .75rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__info-icon {
+    margin-right: .75rem;
+    max-height:0.95rem;
+  }
+}
