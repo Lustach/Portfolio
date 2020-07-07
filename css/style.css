@@ -323,6 +323,8 @@ a:link {
 @media (max-width:767px) {
   .portfolio__col {
     flex-basis: 50%;
+    display: flex;
+    justify-content: center;
   }
 }
 @media (max-width:565px) {
@@ -958,6 +960,7 @@ a:link {
   width: 30px;
   height: 30px;
   display: none;
+  margin-right: 1rem;
 }
 @media (max-width:767px) {
   .burger {

@@ -1,43 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
 	// filters =================================
 	let portfolio = document.querySelectorAll('.portfolio__col')
-	let filters = document.querySelector('.works__nav')
-	filters.addEventListener('click', e => {
-		e.preventDefault()
-		let filter = e.target.getAttribute('data-filter')
-		for (let key = 0; key < portfolio.length; key++) {
-			if (portfolio.hasOwnProperty(key)) {
-				if (filter === 'all') {
-					portfolio[key].style.display = 'block'
-					continue
-				}
-				if (portfolio[key].getAttribute('data-cat') !== filter) {
-					portfolio[key].style.display = 'none'
-				} else {
-					portfolio[key].style.display = 'block'
+	let filters = document.querySelectorAll('.works__nav-link')
+	filters.forEach(el => addEventListener('click', e => {
+			e.preventDefault()
+			let filter = e.target.getAttribute('data-filter')
+			for (let key = 0; key < portfolio.length; key++) {
+				if (portfolio.hasOwnProperty(key)) {
+					if (filter === 'all') {
+						portfolio[key].style.display = 'block'
+						continue
+					}
+					if (portfolio[key].getAttribute('data-cat') !== filter) {
+						portfolio[key].style.display = 'none'
+					} else {
+						portfolio[key].style.display = 'block'
+					}
 				}
 			}
-		}
-	})
-	// modal ===================================
+		})
+	)
+	// modal =================================== ой хуйни наворотил(
 	let modal = document.querySelectorAll('[data-modal]')
-	let target = null
+	let target = []
 	modal.forEach((e) => {
 			e.addEventListener('click', e => {
 				e.preventDefault()
-				target = e.target.getAttribute('data-modal')
-				if (target === '#modal_hire_me') {
+				target.push(e.target.getAttribute('data-modal'))
+				console.log(target)
+				if (target[target.length - 1] === '#modal_hire_me') {
+					console.log('hi')
 					resetDataModal(target)
 					document.querySelector('#modal_hire_me').style.display = 'flex'
 				}
-				if (target === '#modal_resume') {
+				if (target[target.length - 1] === '#modal_resume') {
 					resetDataModal(target)
 					document.querySelector('#modal_resume').style.display = 'flex'
 				}
-				// if (e.target.getAttribute('data-modal') === '#modal_project_1') {
-				// 	resetDataModal()
-				// 	document.querySelector('#modal_project_1').style.display = 'flex'
-				// }
 			})
 		}
 	)
@@ -45,9 +44,19 @@ document.addEventListener('DOMContentLoaded', function () {
 	modalClose.forEach(e => {
 		e.addEventListener('click', e => {
 			e.preventDefault()
+			console.log(target)
 			resetDataModal(target)
+			target.splice(target.length - 1, 1)
 		})
 	})
+	/**
+	 *
+	 * @param {Array}  selector
+	 */
+	function resetDataModal(selector) {
+		console.log(selector, 'hop')
+		document.querySelector(selector[selector.length - 1]).style.display = 'none'
+	}
 	// =========================================
 	// для каждой работы передавать данные и отображать в диалоговом окне
 	// let works = document.querySelectorAll('.work')
@@ -58,10 +67,4 @@ document.addEventListener('DOMContentLoaded', function () {
 	// 	})
 	// })
 }, false)
-/**
- *
- * @param {string}  selector
- */
-function resetDataModal(selector) {
-	document.querySelector(selector).style.display = 'none'
-}
+
