@@ -27,9 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			e.addEventListener('click', e => {
 				e.preventDefault()
 				target.push(e.target.getAttribute('data-modal'))
-				console.log(target)
 				if (target[target.length - 1] === '#modal_hire_me') {
-					console.log('hi')
 					resetDataModal(target)
 					document.querySelector('#modal_hire_me').style.display = 'flex'
 				}
@@ -44,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	modalClose.forEach(e => {
 		e.addEventListener('click', e => {
 			e.preventDefault()
-			console.log(target)
 			resetDataModal(target)
 			target.splice(target.length - 1, 1)
 		})
@@ -54,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	 * @param {Array}  selector
 	 */
 	function resetDataModal(selector) {
-		console.log(selector, 'hop')
 		document.querySelector(selector[selector.length - 1]).style.display = 'none'
 	}
 	// =========================================

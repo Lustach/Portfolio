@@ -4,10 +4,22 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 -1rem;
-
+  &__tablet{
+    &--date{
+      display:none;
+      font-weight: lighter;
+      @media @tablet{
+        display:block;
+      }
+    }
+  }
   &__col {
     width: 33.33333%;
     padding: 0 1rem;
+    @media @tablet{
+      width: 100%;
+      padding: 0 5rem;
+    }
   }
 
   &__item {
@@ -17,6 +29,10 @@
   &__header {
     position: relative;
     margin-bottom: 1.35rem;
+    @media @tablet{
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__content {
@@ -40,6 +56,9 @@
     top: 0;
     left: 0;
     z-index: 1;
+    @media @tablet{
+      display:none;
+    }
   }
 
   &__photo {
@@ -63,6 +82,10 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+    @media @tablet{
+      display: flex;
+      justify-content: space-evenly;
     }
   }
 

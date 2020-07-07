@@ -1,9 +1,18 @@
 .about {
   margin: 8.4rem 0;
-
+  @media @tablet-big{
+    margin:0;
+  }
   &__inner {
     display: flex;
     max-width: 1090px;
+    @media @tablet {
+      //display:none;
+      flex-direction: column-reverse;
+    }
+    @media @mobile{
+      margin-bottom:1rem;
+    }
   }
 
   &__content {
@@ -13,18 +22,34 @@
     @media @tablet {
       width: 100%;
     }
+    @media @mobile{
+      padding-left:0.5rem;
+    }
   }
 
   // жоско
   &__photo {
     position: relative;
+    @media @tablet {
+      margin-top: 2rem;
+      display: flex;
+      align-self: center;
+    }
 
     img {
       position: absolute;
       bottom: 0;
       z-index: 2;
-    }
+      @media @tablet {
+        display: flex;
+        align-self: center;
+        position: relative;
+      }
 
+    }
+    @media @mobile {
+      width:100%
+    }
     width: 50%;
 
     &:before {
@@ -37,10 +62,16 @@
       left: 1rem;
       bottom: 0;
       z-index: 1;
+      @media @tablet {
+        max-width: 280px; //
+        width: 100%; //
+        max-height: 250px;
+      }
+      @media @mobile {
+        display: none;
+      }
     }
-    @media @tablet{
-      display:none;
-    }
+
   }
 
   //
@@ -51,6 +82,7 @@
     @media @notebook {
       font-size: 2.5rem;
     }
+
   }
 
   &__bigtitle {
@@ -65,6 +97,9 @@
     //left:-10px;
     @media @notebook {
       font-size: 4rem;
+    }
+    @media @mobile{
+      font-size: 3rem;
     }
   }
 
