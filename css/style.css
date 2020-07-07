@@ -525,9 +525,20 @@ a:link {
   margin-top: 14rem;
   margin-bottom: 8rem;
 }
+@media (max-width:565px) {
+  .news {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+  }
+}
 .news__header {
   margin-bottom: 3.6rem;
   text-align: center;
+}
+@media (max-width:475px) {
+  .news__header {
+    margin-bottom: 1.4rem;
+  }
 }
 .news__title {
   margin-bottom: 0.3rem;
@@ -535,6 +546,11 @@ a:link {
   color: #2B2A2C;
   text-transform: uppercase;
   font-weight: 700;
+}
+@media (max-width:475px) {
+  .news__title {
+    font-size: 2rem;
+  }
 }
 .news__text {
   font-size: 1.2rem;
@@ -573,6 +589,11 @@ a:link {
   .articles__col {
     width: 100%;
     padding: 0 5rem;
+  }
+}
+@media (max-width:475px) {
+  .articles__col {
+    padding: 0 1rem;
   }
 }
 .articles__item {
