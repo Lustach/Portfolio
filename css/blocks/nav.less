@@ -5,9 +5,25 @@
   height: 100%;
   align-items: center;
   @media @tablet{
+
+  }
+  @media @tablet{
+    //margin: 50% 0;
+    position: absolute;
     display:none;
+    top:0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 10px;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    z-index:1;
   }
   &__link {
+    @media @tablet{
+      margin: 1rem;
+    }
     margin-right: 2rem;
     font-size: 0.93rem;
     position:relative;

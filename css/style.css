@@ -58,6 +58,7 @@ html {
 }
 .header {
   padding: 1.2rem 0;
+  box-shadow: 0 0 10px;
 }
 .header__inner {
   display: flex;
@@ -97,7 +98,16 @@ html {
 }
 @media (max-width:767px) {
   .nav {
+    position: absolute;
     display: none;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 10px;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    z-index: 1;
   }
 }
 .nav__link {
@@ -109,6 +119,11 @@ html {
   font-weight: 700;
   text-decoration: none;
   border-radius: 20px;
+}
+@media (max-width:767px) {
+  .nav__link {
+    margin: 1rem;
+  }
 }
 .nav__link:after {
   content: '';
@@ -249,11 +264,6 @@ a:link {
 .btn + .btn {
   margin-left: 1rem;
 }
-@media (max-width:991px) {
-  .btn + .btn {
-    margin: auto;
-  }
-}
 .btn--sm {
   padding: 0.5em 1em;
   font-size: 0.94rem;
@@ -350,7 +360,7 @@ a:link {
 }
 @media (max-width:991px) {
   .about {
-    margin: 0;
+    margin: 1rem;
   }
 }
 .about__inner {
@@ -1081,13 +1091,14 @@ a:link {
 }
 @media (max-width:767px) {
   .burger {
-    display: block;
+    display: flex;
+    z-index: 1;
   }
 }
 .burger__icon {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 30px;
+  height: 30px;
 }
 /*Helpers*/
 .text-center {

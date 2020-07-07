@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
+	let burger = document.querySelector('.burger')
+
+	burger.addEventListener('click', e => {
+		let nav = (document.querySelector('.nav'))
+		if(window.getComputedStyle(nav).display ==='none'){
+			nav.style.display='flex'
+		}
+		else{
+			nav.style.display='none'
+		}
+	})
+
 	// filters =================================
 	let portfolio = document.querySelectorAll('.portfolio__col')
 	let filters = document.querySelectorAll('.works__nav-link')
@@ -9,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			for (let key = 0; key < portfolio.length; key++) {
 				if (portfolio.hasOwnProperty(key)) {
 					if (filter === 'all') {
-						portfolio[key].style.display = 'block'
+						portfolio[key].style.display = 'flex'
 						continue
 					}
 					if (portfolio[key].getAttribute('data-cat') !== filter) {
 						portfolio[key].style.display = 'none'
 					} else {
-						portfolio[key].style.display = 'block'
+						portfolio[key].style.display = 'flex'
 					}
 				}
 			}
