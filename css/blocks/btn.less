@@ -17,6 +17,9 @@
   color: inherit;
   transition: background-color .2s linear, color .2s linear, box-shadow .2s linear;
   margin-left: 1rem;
+  @media @tablet-big{
+    margin-bottom:1rem;
+  }
   @media @mobile{
     min-width: 100px;
     font-size: 0.9rem;
@@ -26,7 +29,6 @@
     background-color: @black;
     color: white;
     box-shadow: 2px 2px 10px rgba(#000, 24%);
-
   }
 
   & + & {

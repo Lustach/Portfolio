@@ -1,34 +1,59 @@
 document.addEventListener('DOMContentLoaded', function () {
-	let project = class Project {
-		/**
-		 *
-		 * @param {Array<string>}  about
-		 * @param {string}img
-		 */
-		//вот это вот залупа и зачем я так упоролся не знаю, всё равно бд подключать надо...
-		// constructor(about, img) {
-		// 	this.category = about[0].trim()
-		// 	this.title = about[1].trim()
-		// 	this.date = about[2].trim()
-		// 	this.img = img
-		// }
-	}
+	// let project = class Project {
+	// 	/**
+	// 	 *
+	// 	 * @param {Array<string>}  about
+	// 	 * @param {string}img
+	// 	 */
+	// 	//вот это вот залупа и зачем я так упоролся не знаю, всё равно бд подключать надо...
+	// 	// constructor(about, img) {
+	// 	// 	this.category = about[0].trim()
+	// 	// 	this.title = about[1].trim()
+	// 	// 	this.date = about[2].trim()
+	// 	// 	this.img = img
+	// 	// }
+	// }
+	// ============================== slider
 
-	// burger & navigation in header
-	let burger = document.querySelector('.burger')
-	burger.addEventListener('click', e => {
-		let nav = (document.querySelector('.nav'))
-		if (window.getComputedStyle(nav).display === 'none') {
-			nav.style.display = 'flex'
-		} else {
-			nav.style.display = 'none'
-		}
-	})
+
+
+
+
+
+
+
+
+
+
+	// ============================== burger & navigation in header
+	(function burgerNavigation(){
+		let burger = document.querySelector('.burger')
+		burger.addEventListener('click', e => {
+			let nav = (document.querySelector('.nav__link--block'))
+			let footer = document.querySelector('.footer')
+			if (window.getComputedStyle(nav).display === 'none') {
+				// todo подход неправильный, такое надо задавать через classList
+				nav.style.display = 'flex'
+				nav.style.position = 'fixed'
+				burger.style.zIndex = '3'
+				burger.style.position = 'fixed'
+				burger.style.right= '15px'
+				footer.style.position = 'fixed'
+				footer.style.bottom = '0'
+				footer.style.zIndex = '3'
+				footer.style.width = '100%'
+			} else {
+				nav.style.display = 'none'
+				burger.style.position = 'static'
+				footer.style.position = 'static'
+			}
+		})
+	})()
+
 
 	// filters =================================
 	let portfolio = document.querySelectorAll('.portfolio__col')
 	let filters = document.querySelectorAll('.works__nav-link')
-	console.log(filters)
 	filters.forEach(el => el.addEventListener('click', e => {
 			e.preventDefault()
 			let filter = e.target.getAttribute('data-filter')
@@ -87,14 +112,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	// }
 	// work modal view=========================================
 	// для каждой работы передавать данные и отображать в диалоговом окне
-	// let works = document.querySelectorAll('.work')
-	// works.forEach(e => {
-	// 	e.addEventListener('click', e => {
-	// 		// console.log(e.currentTarget.textContent.split('\n').filter(e => e.trim().length > 0),// костыль
-	// 		// 	e.currentTarget.getElementsByTagName('img')[0].currentSrc)
-	// 		new project(e.currentTarget.textContent.split('\n').filter(e => e.trim().length > 0),
-	// 			e.currentTarget.getElementsByTagName('img')[0].currentSrc)
-	// 	})
-	// })
+	let works = document.querySelectorAll('.work')
+	works.forEach(e => {
+		e.addEventListener('click', e => {
+			// crutch!
+			new project(e.currentTarget.textContent.split('\n').filter(e => e.trim().length > 0),
+				e.currentTarget.getElementsByTagName('img')[0].currentSrc)
+		})
+	})
 }, false)
 
