@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	// filters =================================
 	let portfolio = document.querySelectorAll('.portfolio__col')
 	let filters = document.querySelectorAll('.works__nav-link')
-	filters.forEach(el => addEventListener('click', e => {
+	console.log(filters)
+	filters.forEach(el => el.addEventListener('click', e => {
 			e.preventDefault()
 			let filter = e.target.getAttribute('data-filter')
 			for (let key = 0; key < portfolio.length; key++) {
