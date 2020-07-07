@@ -58,7 +58,11 @@ html {
 }
 .header {
   padding: 1.2rem 0;
-  box-shadow: 0 0 10px;
+}
+@media (max-width:991px) {
+  .header {
+    box-shadow: 0 0 10px;
+  }
 }
 .header__inner {
   display: flex;
