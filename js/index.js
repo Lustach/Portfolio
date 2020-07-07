@@ -1,13 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
-	let burger = document.querySelector('.burger')
+	let project = class Project {
+		/**
+		 *
+		 * @param {Array<string>}  about
+		 * @param {string}img
+		 */
+		//вот это вот залупа и зачем я так упоролся не знаю, всё равно бд подключать надо...
+		// constructor(about, img) {
+		// 	this.category = about[0].trim()
+		// 	this.title = about[1].trim()
+		// 	this.date = about[2].trim()
+		// 	this.img = img
+		// }
+	}
 
+	// burger & navigation in header
+	let burger = document.querySelector('.burger')
 	burger.addEventListener('click', e => {
 		let nav = (document.querySelector('.nav'))
-		if(window.getComputedStyle(nav).display ==='none'){
-			nav.style.display='flex'
-		}
-		else{
-			nav.style.display='none'
+		if (window.getComputedStyle(nav).display === 'none') {
+			nav.style.display = 'flex'
+		} else {
+			nav.style.display = 'none'
 		}
 	})
 
@@ -66,13 +80,20 @@ document.addEventListener('DOMContentLoaded', function () {
 	function resetDataModal(selector) {
 		document.querySelector(selector[selector.length - 1]).style.display = 'none'
 	}
-	// =========================================
+
+	// function findAncestor(el, cls) {???????????
+	// 	while ((el = el.parentElement) && !el.classList.contains(cls))
+	// 		return el
+	// }
+	// work modal view=========================================
 	// для каждой работы передавать данные и отображать в диалоговом окне
 	// let works = document.querySelectorAll('.work')
-	// works.forEach(e=>{
-	// 	e.addEventListener('click',e=>{
-	// 		e.preventDefault()
-	// 		console.log(e.target)
+	// works.forEach(e => {
+	// 	e.addEventListener('click', e => {
+	// 		// console.log(e.currentTarget.textContent.split('\n').filter(e => e.trim().length > 0),// костыль
+	// 		// 	e.currentTarget.getElementsByTagName('img')[0].currentSrc)
+	// 		new project(e.currentTarget.textContent.split('\n').filter(e => e.trim().length > 0),
+	// 			e.currentTarget.getElementsByTagName('img')[0].currentSrc)
 	// 	})
 	// })
 }, false)
