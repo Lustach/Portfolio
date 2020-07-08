@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+	// ======================== slider
 	let slideIndex = 1
 	let slides = document.querySelectorAll(".modal-work")
 	showSlides(slideIndex)

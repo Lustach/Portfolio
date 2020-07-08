@@ -103,6 +103,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	 * @param {Array}  selector
 	 */
 	function resetDataModal(selector) {
+		// crutch!
+		if(selector.length===0){
+			selector.push('#modal_project')
+		}
 		document.querySelector(selector[selector.length - 1]).style.display = 'none'
 	}
 
@@ -115,9 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	let works = document.querySelectorAll('.work')
 	works.forEach(e => {
 		e.addEventListener('click', e => {
+			let modal_project = document.querySelector('#modal_project').style.display='block'
+
 			// crutch!
-			new project(e.currentTarget.textContent.split('\n').filter(e => e.trim().length > 0),
-				e.currentTarget.getElementsByTagName('img')[0].currentSrc)
+			// new project(e.currentTarget.textContent.split('\n').filter(e => e.trim().length > 0),
+			// 	e.currentTarget.getElementsByTagName('img')[0].currentSrc)
 		})
 	})
 }, false)
