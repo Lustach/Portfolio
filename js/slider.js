@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	next.forEach(el => el.addEventListener('click', e => {
 		showSlides(slideIndex += 1)
 	}))
-	next.addEventListener('click', () => {
-		showSlides(slideIndex += 1)
-	})
 	/* Основная функция слайдера */
 	function showSlides(n) {
 		if (n > slides.length) {
