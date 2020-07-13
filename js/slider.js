@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	showSlides(slideIndex)
 	let prev = document.querySelectorAll('.prev')
 	let next = document.querySelectorAll('.next')
-	console.log(prev, next)
 	prev.forEach(el => el.addEventListener('click', e => {
 		showSlides(slideIndex -= 1)
 	}))

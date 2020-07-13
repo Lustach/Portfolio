@@ -14,17 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	// 	// }
 	// }
 	// ============================== slider
-
-
-
-
-
-
-
-
-
-
-
 	// ============================== burger & navigation in header
 	(function burgerNavigation(){
 		let burger = document.querySelector('.burger')
@@ -32,16 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			let nav = (document.querySelector('.nav__link--block'))
 			let footer = document.querySelector('.footer')
 			if (window.getComputedStyle(nav).display === 'none') {
-				// todo подход неправильный, такое надо задавать через classList
 				nav.style.display = 'flex'
 				nav.style.position = 'fixed'
-				burger.style.zIndex = '3'
-				burger.style.position = 'fixed'
-				burger.style.right= '15px'
-				footer.style.position = 'fixed'
-				footer.style.bottom = '0'
-				footer.style.zIndex = '3'
-				footer.style.width = '100%'
+				burger.classList.add('forBurger')
+				footer.classList.add('forFooter')
 			} else {
 				nav.style.display = 'none'
 				burger.style.position = 'static'

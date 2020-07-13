@@ -133,6 +133,15 @@ html {
     margin: 30vh 0 1rem 0;
   }
 }
+@media (max-width:475px) {
+  .nav__link {
+    margin: 1rem;
+    align-self: center;
+  }
+  .nav__link:first-child {
+    margin: 15vh 0 1rem 0;
+  }
+}
 .nav__link:after {
   content: '';
   width: 0;
@@ -1157,6 +1166,17 @@ a:link {
   display: block;
   width: 30px;
   height: 30px;
+}
+.forBurger {
+  z-index: 3;
+  position: fixed;
+  right: 15px;
+}
+.forFooter {
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
 }
 /*Helpers*/
 .text-center {
