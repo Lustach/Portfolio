@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
 	// ======================== slider
 	let slideIndex = 1
 	let slides = document.querySelectorAll(".modal-work")
@@ -24,4 +23,3 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		slides[slideIndex - 1].style.display = "flex"
 	}
-}, false)
