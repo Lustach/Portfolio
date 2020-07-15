@@ -3,7 +3,6 @@ let source_folder = 'src'//input
 // todo webpcss(подгрузка картинок в формате webp если браузеры поддерживают webp)
 // webpcss - bug webp-css - bug!!!
 let path = {
-	//output
 	build: {
 		html: project_folder + '/',
 		css: project_folder + '/css/',
@@ -43,18 +42,6 @@ let { src, dest } = require('gulp'),
 	svgSprites = require('gulp-svg-sprite'),
 	ttf2woff = require('gulp-ttf2woff'),
 	ttf2woff2 = require('gulp-ttf2woff2')
-
-// gulp.task('svgSprite', () => {
-// 	return gulp.src([source_folder + '/images/*.svg']).pipe(svgSprite({
-// 		mode: {
-// 			stack: {
-// 				sprite: '../icons/icons.svg',
-// 				example: true
-// 			}
-// 		}
-// 	}))
-// })
-
 function browserSync(params) {
 	browsersync.init({
 		server: {
