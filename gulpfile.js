@@ -136,7 +136,7 @@ function watchFiles(params) {
 	gulp.watch([path.watch.img], images)
 }
 
-let build = gulp.series(html, gulp.parallel(js, css, html, images,fonts))
+let build = gulp.series(html, gulp.parallel(js, css, html, images, fonts))
 let watch = gulp.parallel(build, watchFiles, browserSync)
 exports.js = js
 exports.css = css
