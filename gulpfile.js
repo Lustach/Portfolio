@@ -1,6 +1,7 @@
 let project_folder = 'dist'//output folder
 let source_folder = 'src'//input
-// todo svg
+// todo webpcss(подгрузка картинок в формате webp если браузеры поддерживают webp)
+// webpcss - bug webp-css - bug!!!
 let path = {
 	//output
 	build: {
@@ -37,7 +38,22 @@ let { src, dest } = require('gulp'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify-es').default,
 	imagemin = require('gulp-imagemin'),
-	webp = require('gulp-webp')
+	webp = require('gulp-webp'),
+	webphtml = require('gulp-webp-html'),
+	svgSprites = require('gulp-svg-sprite'),
+	ttf2woff = require('gulp-ttf2woff'),
+	ttf2woff2 = require('gulp-ttf2woff2')
+
+// gulp.task('svgSprite', () => {
+// 	return gulp.src([source_folder + '/images/*.svg']).pipe(svgSprite({
+// 		mode: {
+// 			stack: {
+// 				sprite: '../icons/icons.svg',
+// 				example: true
+// 			}
+// 		}
+// 	}))
+// })
 
 function browserSync(params) {
 	browsersync.init({
@@ -49,14 +65,28 @@ function browserSync(params) {
 	})
 }
 function html() {
-	return src(path.src.html).pipe(fileinclude()).pipe(dest(path.build.html)).pipe(browsersync.stream())
+	return src(path.src.html).pipe(fileinclude()).pipe(webphtml()).pipe(dest(path.build.html)).pipe(browsersync.stream())
 }
+function fonts() {
+	src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts))
+	return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts))
+}
+// function svgSprite() {
+// 	return src(path.src.html).pipe(svgSprites({
+// 		mode: {
+// 			stack: {
+// 				sprite: '../icons/icons.svg',
+// 				example: true
+// 			}
+// 		}
+// 	})).pipe(dest(path.build.img))
+// }
 function js() {
-	return src(path.src.js,{ sourcemaps: true }).pipe(fileinclude()).pipe(dest(path.build.js))// две выгрузки
+	return src(path.src.js, { sourcemaps: true }).pipe(fileinclude()).pipe(dest(path.build.js))// две выгрузки
 	.pipe(uglify())// две выгрузки
 	.pipe(rename({
 		extname: '.min.js'
-	})).pipe(dest(path.build.js,{ sourcemaps: true })).pipe(browsersync.stream())
+	})).pipe(dest(path.build.js, { sourcemaps: true })).pipe(browsersync.stream())
 }
 function css() {
 	return src(path.src.css).pipe(less({
@@ -65,19 +95,28 @@ function css() {
 	).pipe(group_media()).pipe(autoprefixer({
 		overrideBrowserslist: ['last 5 versions'],
 		cascade: true
-	})).pipe(dest(path.build.css))// две выгрузки
-	.pipe(clean_css())//сжать
-	// .pipe(rename({
-	// 	extname: '.min.css'
-	// }))
-	.pipe(dest(path.build.css)).pipe(browsersync.stream())
+	})).pipe(dest(path.build.css)).pipe(clean_css())//сжать
+	// .pipe(dest(path.build.css))
+	.pipe(browsersync.stream())
 }
 function images() {
-	return src(path.src.img)
-	.pipe(imagemin([
-
-	]))
-	.pipe(dest(path.build.img))
+	return src(path.src.img).pipe(
+		webp({
+			quality: 75,
+		})
+	)
+	// .pipe(dest(path.build.html))
+	.pipe(src(path.src.img)).pipe(imagemin([
+		imagemin.gifsicle({ interlaced: true }),
+		imagemin.mozjpeg({ quality: 75, progressive: true }),
+		imagemin.optipng({ optimizationLevel: 5 }),
+		// imagemin.svgo({
+		// 	plugins: [
+		// 		{ removeViewBox: false },
+		// 		{ cleanupIDs: false }
+		// 	]
+		// })
+	])).pipe(dest(path.build.img)).pipe(browsersync.stream())
 	// return src(path.src.img)
 	// .pipe(webp({
 	// 	quality: 70
@@ -97,12 +136,14 @@ function watchFiles(params) {
 	gulp.watch([path.watch.img], images)
 }
 
-let build = gulp.series(html, gulp.parallel(js, css, html, images))
+let build = gulp.series(html, gulp.parallel(js, css, html, images,fonts))
 let watch = gulp.parallel(build, watchFiles, browserSync)
 exports.js = js
 exports.css = css
 exports.html = html
 exports.images = images
+exports.fonts = fonts
+// exports.svgSprite = svgSprite
 exports.build = build
 exports.watch = watch
 exports.default = watch
