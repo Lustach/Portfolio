@@ -1,4 +1,4 @@
-let project_folder = 'dist'//output folder
+let project_folder = 'docs'//output folder
 let source_folder = 'src'//input
 // todo webpcss(подгрузка картинок в формате webp если браузеры поддерживают webp)
 // webpcss - bug webp-css - bug!!!
