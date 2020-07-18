@@ -93,10 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
 				if (target[target.length - 1] === '#modal_hire_me') {
 					resetDataModal(target)
 					document.querySelector('#modal_hire_me').style.display = 'flex'
+					document.querySelector('#modal_hire_me').style.position = 'fixed'// for lazy-loading
 				}
 				if (target[target.length - 1] === '#modal_resume') {
 					resetDataModal(target)
 					document.querySelector('#modal_resume').style.display = 'flex'
+					document.querySelector('#modal_resume').style.position = 'fixed'// for lazy-loading
 				}
 			})
 		}
@@ -130,8 +132,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	let works = document.querySelectorAll('.work')
 	works.forEach(e => {
 		e.addEventListener('click', e => {
-			let modal_project = document.querySelector('#modal_project').style.display='block'
-
+			console.log('hi')
+			let modal_project = document.querySelector('#modal_project').style.display='flex'
+			document.querySelector('#modal_project').style.position = 'fixed'// for lazy-loading
 			// crutch!
 			// new project(e.currentTarget.textContent.split('\n').filter(e => e.trim().length > 0),
 			// 	e.currentTarget.getElementsByTagName('img')[0].currentSrc)
