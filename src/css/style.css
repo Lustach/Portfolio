@@ -814,7 +814,7 @@ a:link {
   padding: 1rem;
   overflow: auto;
   background-color: rgba(6, 15, 49, 0.9);
-  position: fixed;
+  position: initial;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -1092,6 +1092,7 @@ a:link {
 .contact__info-icon {
   margin-right: 0.75rem;
   max-height: 0.95rem;
+  min-width: 14px;
 }
 .form__group {
   margin-bottom: 1.8rem;
