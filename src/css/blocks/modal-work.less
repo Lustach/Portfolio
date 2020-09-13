@@ -1,9 +1,23 @@
 .modal-work {
     display: flex;
+    @media (max-width:768px){
+        display: flex;
+        flex-direction: column;
+    }
     &__preview {
         width: 65%;
         position: relative;
         overflow: hidden;
+        @media (max-width:768px){
+            margin-top:50px;
+            height: 370px;
+            width: auto;
+            & img {
+                width:80%;
+                min-width: 282px;
+            }
+            //display: none;
+        }
     }
     &__photo {
         position: absolute;
@@ -17,12 +31,17 @@
         width: 35%;
         padding: 3.4rem 3.6rem 1rem 1.73rem;
         position: relative;
+        @media (max-width:768px){
+            width: 100%;
+            padding: 0 1rem 1rem 1.73rem;
+        }
     }
     &__header {
         margin-bottom: 2.2rem;
-    }
-    &__header {
-        margin-bottom: 2.2rem;
+        @media (max-width:768px){
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
     }
     &__title {
         margin-bottom: .2rem;
@@ -37,6 +56,10 @@
     }
     &__client {
         margin-bottom: 2.2rem;
+        @media (max-width:768px){
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
     }
     &__client-title {
         margin-bottom: .2rem;
@@ -52,12 +75,15 @@
     }
     &__text {
         margin-bottom: 8.66rem;
-        max-height: 410px;
-        overflow-y: auto;
+        //max-height: 410px;
+        //overflow-y: auto;
         font-size: .8rem;
         line-height: 2;
         color: @gray;
         font-weight: 300;
+        @media (max-width:768px){
+            margin-bottom: 2rem;
+        }
     }
     &__footer {
         width: 100%;

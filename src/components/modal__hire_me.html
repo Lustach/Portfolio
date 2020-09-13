@@ -1,0 +1,47 @@
+<div class="modal" id="modal_hire_me">
+  <div class="modal__dialog  modal__dialog--sm">
+
+    <button class="modal__close" type="button">
+      <img loading="lazy" src="images/times-circle.svg" alt="Close"/>
+    </button>
+
+    <div class="contact">
+      <div class="contact__left">
+        <h3 class="modal__title mb-0">LET'S TALK!</h3>
+        <h4 class="modal__subtitle">CALL ME OR SEND ME A REQUEST</h4>
+
+        <ul class="contact__info">
+          <li class="contact__info-item">
+            <img loading="lazy" class="contact__info-icon" src="images/phone.svg" alt=""/>
+            0714494247
+          </li>
+          <li class="contact__info-item">
+            <img loading="lazy" class="contact__info-icon" src="images/mail.svg" alt=""/>
+            lusta.vlad2001@gmail.com
+          </li>
+          <li class="contact__info-item">
+            <img loading="lazy" class="contact__info-icon" src="images/telegram.svg" alt=""/>
+            @Lustach
+          </li>
+        </ul>
+        <!-- todo надо прикручивать бд или по апишке на почту -->
+        <form class="form" action="/" method="post">
+          <div class="form__group">
+            <label class="form__label" for="input-email">Address e-mail</label>
+            <input class="form__input" name="input-email" type="text" id="input-email" placeholder="Adress e-mail">
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="input-text">Request</label>
+            <textarea class="form__textarea" name="input-text" id="input-text" placeholder="Type your request..."></textarea>
+          </div>
+
+          <div class="text-right">
+            <button class="btn" type="submit">SEND</button>
+          </div>
+        </form>
+      </div><!-- /.contact__left -->
+    </div><!-- /.contact -->
+
+  </div><!-- /.modal__dialog -->
+</div>
