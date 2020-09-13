@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		slides[slideIndex - 1].style.display = "flex"
 	}
 
+	
+function disableOverflow(){
+	document.body.style.overflow='hidden'
+}
+function enableOverflow(){
+	document.body.style.overflow='auto'
+}
+
+
 	// let project = class Project {
 	// 	/**
 	// 	 *
@@ -53,10 +62,13 @@ document.addEventListener('DOMContentLoaded', function () {
 				footer.classList.add('forFooter')
 				burger.style.removeProperty('position');
 				footer.style.removeProperty('position');
+				console.log(document.body.style)
+				disableOverflow()
 			} else {
 				nav.style.display = 'none'
 				burger.style.position = 'static'
 				footer.style.position = 'static'
+				enableOverflow()
 			}
 		})
 	})()
@@ -88,6 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	let target = []
 	modal.forEach((e) => {
 			e.addEventListener('click', e => {
+				console.log('open')
+				disableOverflow()
 				e.preventDefault()
 				target.push(e.target.getAttribute('data-modal'))
 				if (target[target.length - 1] === '#modal_hire_me') {
@@ -109,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			e.preventDefault()
 			resetDataModal(target)
 			target.splice(target.length - 1, 1)
+			enableOverflow()
 		})
 	})
 	/**
@@ -133,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	works.forEach(e => {
 		e.addEventListener('click', e => {
 			console.log('hi')
+			disableOverflow()
 			let modal_project = document.querySelector('#modal_project').style.display='flex'
 			document.querySelector('#modal_project').style.position = 'fixed'// for lazy-loading
 			// crutch!
